@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ana & Fer - Japón Express (7 días) · Houston → Tokyo</title>
+  <meta name="description" content="Itinerario Japón Express (7 días) con sakura, Kyoto, Nara, Osaka y teamLab. Incluye vuelos sugeridos desde Houston a Tokyo." />
+  <style>
+    :root{
+      --bg:#f8f9fc;
+      --card:#ffffff;
+      --muted:#64748b;
+      --text:#0f172a;
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --warn:#f59e0b;
+      --line:rgba(0,0,0,.08);
+      --shadow: 0 4px 20px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,.08), transparent 60%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.06), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    a.link{color:#4f46e5; text-decoration:underline; text-underline-offset:3px}
+    a.place-link{color:#7c5cff; text-decoration:none; font-weight:600; border-bottom:1px dotted rgba(124,92,255,.4)}
+    a.place-link:hover{color:#6b4ce0; border-bottom-style:solid}
+    .wrap{max-width:1060px; margin:0 auto; padding:28px 18px 70px}
+
+    .main-title{
+      text-align:center;
+      margin-bottom:32px;
+      padding:24px 0;
+    }
+    .main-title h1{
+      font-size:clamp(42px, 8vw, 72px);
+      font-weight:800;
+      margin:0;
+      background: linear-gradient(135deg, #7c5cff 0%, #ff6b9d 50%, #ffa500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing:-1px;
+      line-height:1.1;
+      position:relative;
+      display:inline-block;
+    }
+    .main-title .ampersand{
+      font-family: Georgia, serif;
+      font-style:italic;
+      font-weight:400;
+      font-size:0.9em;
+      opacity:0.85;
+    }
+    .main-title .subtitle{
+      font-size:15px;
+      color:var(--muted);
+      margin-top:8px;
+      font-weight:500;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+    .main-title .emoji-decor{
+      font-size:28px;
+      margin:0 12px;
+      display:inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%, 100%{transform: translateY(0px)}
+      50%{transform: translateY(-8px)}
+    }
+
+    header{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+      margin-bottom:18px;
+    }
+    @media (max-width: 900px){ header{grid-template-columns:1fr} }
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 260px at 30% 0%, rgba(255,182,193,.15), transparent 55%),
+                  radial-gradient(700px 260px at 70% 30%, rgba(124,92,255,.12), transparent 55%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(124,92,255,.08);
+      color: #1e293b;
+      font-weight:600;
+      font-size:13px;
+      width:fit-content;
+    }
+
+    h1{margin:12px 0 6px; font-size:32px; letter-spacing:.2px}
+    .sub{color:var(--muted); margin:0; font-size:15px}
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: white;
+      cursor:pointer;
+      user-select:none;
+      font-weight:650;
+    }
+    .btn.primary{background: linear-gradient(180deg, #7c5cff, #6b4ce0); border-color: #7c5cff; color:white}
+    .btn.good{background: linear-gradient(180deg, #22c55e, #16a34a); border-color: #22c55e; color:white}
+    .btn:hover{transform: translateY(-1px)}
+
+    .side{
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.6));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .side h3{margin:0 0 10px; font-size:16px}
+    .kvs{display:grid; gap:10px}
+    .kv{display:flex; justify-content:space-between; gap:10px; padding:10px 12px; border:1px dashed rgba(0,0,0,.12); border-radius:14px; background: rgba(124,92,255,.04)}
+    .kv b{font-weight:700}
+    .kv span{color:var(--muted)}
+
+    .grid{display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:16px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background: white;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    .muted{color:var(--muted)}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(124,92,255,.08);
+      font-size:12.5px;
+      margin:0 8px 8px 0;
+      color:#1e293b;
+    }
+    .star{color:#ffd56a}
+
+    .days{display:grid; gap:14px; margin-top:18px}
+
+    details.day{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    details.day[open]{background: rgba(124,92,255,.02)}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:16px 16px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+    }
+    summary::-webkit-details-marker{display:none}
+    .dleft{
+      width:44px; height:44px; border-radius:14px;
+      background: rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.25);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      color:#7c5cff;
+    }
+    .dmain{flex:1}
+    .dtitle{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .dtitle h3{margin:0; font-size:17px}
+    .dtitle .tag{font-size:12px; color:#475569; padding:5px 8px; border-radius:999px; border:1px solid var(--line); background: rgba(124,92,255,.08)}
+    .dmeta{margin-top:6px; color:var(--muted); font-size:13.5px}
+
+    .content{padding: 0 16px 16px}
+    .sections{display:grid; gap:12px; margin-top:8px}
+    .sec{border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:12px; background: rgba(124,92,255,.03)}
+    .sec h4{margin:0 0 6px; font-size:14px}
+    .sec ul{margin:8px 0 0 18px}
+    .sec li{margin:4px 0}
+    .sec .time{color:#7c5cff; font-weight:700}
+
+    .footnote{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      padding:14px;
+      border:1px solid rgba(0,0,0,.1);
+      border-radius:16px;
+      background: rgba(124,92,255,.04);
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      background: rgba(15,23,42,.9);
+      border:1px solid rgba(0,0,0,.2);
+      padding:10px 12px;
+      border-radius: 14px;
+      color:white;
+      font-size: 13px;
+      display:none;
+      box-shadow: 0 8px 24px rgba(0,0,0,.2);
+      z-index: 50;
+    }
+
+    .gallery-section{
+      margin-top:32px;
+      padding:32px 0;
+    }
+    .gallery-section h2{
+      text-align:center;
+      font-size:32px;
+      margin:0 0 12px;
+      background: linear-gradient(135deg, #7c5cff, #ff6b9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gallery-section .subtitle-text{
+      text-align:center;
+      color:var(--muted);
+      margin-bottom:24px;
+      font-size:15px;
+    }
+    .gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+      margin-top:20px;
+    }
+    .gallery-item{
+      position:relative;
+      border-radius:var(--radius);
+      overflow:hidden;
+      aspect-ratio:4/3;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.15);
+    }
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .gallery-item .overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+      padding:16px;
+      color:white;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover .overlay{
+      transform: translateY(0);
+    }
+    .gallery-item .overlay h3{
+      margin:0 0 4px;
+      font-size:16px;
+      font-weight:700;
+    }
+    .gallery-item .overlay p{
+      margin:0;
+      font-size:13px;
+      opacity:0.9;
+    }
+
+    .flights-section{
+      margin-top:32px;
+      padding:32px 0;
+    }
+    .flights-section h2{
+      text-align:center;
+      font-size:32px;
+      margin:0 0 12px;
+      background: linear-gradient(135deg, #7c5cff, #ff6b9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .flights-section .subtitle-text{
+      text-align:center;
+      color:var(--muted);
+      margin-bottom:24px;
+      font-size:15px;
+    }
+    .flight-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      margin-bottom:16px;
+      box-shadow:var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .flight-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,.12);
+    }
+    .flight-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .flight-airline{
+      font-weight:700;
+      font-size:18px;
+      color:var(--text);
+    }
+    .flight-price{
+      font-size:24px;
+      font-weight:800;
+      color:#7c5cff;
+    }
+    .flight-price .from{
+      font-size:14px;
+      font-weight:500;
+      color:var(--muted);
+    }
+    .flight-route{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:12px;
+      flex-wrap:wrap;
+    }
+    .flight-city{
+      flex:1;
+      min-width:120px;
+    }
+    .flight-city .code{
+      font-size:24px;
+      font-weight:800;
+      color:var(--text);
+    }
+    .flight-city .time{
+      font-size:14px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+    .flight-arrow{
+      color:var(--muted);
+      font-size:20px;
+    }
+    .flight-details{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      font-size:13px;
+      color:var(--muted);
+    }
+    .flight-detail{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .flight-badge{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+    }
+    .flight-badge.nonstop{
+      background:rgba(34,197,94,.15);
+      color:#16a34a;
+    }
+    .flight-badge.stop{
+      background:rgba(245,158,11,.15);
+      color:#d97706;
+    }
+    @media print{
+      body{background:#fff; color:#111}
+      .hero, .side, .card, details.day{box-shadow:none}
+      .btn{display:none}
+      a.link{text-decoration:none}
+      .wrap{max-width:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="main-title">
+      <h1>
+        <span class="emoji-decor">✈️</span>
+        Ana <span class="ampersand">&</span> Fer
+        <span class="emoji-decor">🌸</span>
+      </h1>
+      <div class="subtitle">Japan Adventure 2026</div>
+    </div>
+    <header>
+      <div class="hero">
+        <div class="badge">🇯🇵 Japón Express · 7 días · Sakura + Kyoto + Nara + Osaka + teamLab</div>
+        <h1>Itinerario Detallado y Optimizado</h1>
+        <p class="sub">Salida desde <b>Houston (IAH)</b> → llegada a <b>Tokyo (HND o NRT)</b>. Ritmo ágil pero realista, con opciones “si sobra energía”.</p>
+        <div class="actions">
+          <button class="btn primary" id="btnExpand">Abrir todos los días</button>
+          <button class="btn" id="btnCollapse">Cerrar todos</button>
+          <button class="btn good" id="btnCopy">Copiar checklist rápido</button>
+          <button class="btn" onclick="window.print()">Imprimir / PDF</button>
+        </div>
+      </div>
+
+      <aside class="side">
+        <h3>Resumen rápido</h3>
+        <div class="kvs">
+          <div class="kv"><b>Fechas</b><span>28 Mar → 4 Abr (ajustable)</span></div>
+          <div class="kv"><b>Ciudades</b><span>Tokyo · Kyoto · Nara · Osaka</span></div>
+          <div class="kv"><b>Must-do</b><span>Torii rojos · Sakura · teamLab</span></div>
+          <div class="kv"><b>Transporte</b><span>Suica/PASMO + Shinkansen</span></div>
+        </div>
+        <p class="muted" style="margin:12px 0 0">
+          <span class="pill"><span class="star">★</span> = súper turístico / imperdible</span>
+          <span class="pill">⏱️ tiempos reales</span>
+        </p>
+      </aside>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>✈️ Vuelos sugeridos (Houston → Tokyo)</h2>
+        <p class="muted">Recomendación: busca <b>nonstop</b> si el precio no se dispara. En Houston, normalmente sales de <b>IAH</b> (George Bush Intercontinental).</p>
+        <div style="margin-top:10px">
+          <div class="pill">✅ Nonstop posible: IAH → NRT (Narita)</div>
+          <div class="pill">✅ Nonstop posible: IAH → HND (Haneda)</div>
+          <div class="pill">⏱️ ~14 h (aprox.)</div>
+        </div>
+        <div class="sections" style="margin-top:10px">
+          <div class="sec">
+            <h4>Opción 1 (prioridad): Nonstop</h4>
+            <ul>
+              <li><b>United</b> y <b>ANA</b> suelen ofrecer rutas Houston ↔ Tokyo (HND/NRT).</li>
+              <li>En algunos periodos también aparece <b>ZIPAIR</b> entre IAH ↔ NRT (revisar si aplica a tus fechas).</li>
+              <li><span class="time">Tip:</span> llega a IAH con <b>3 horas</b> de anticipación para vuelos internacionales.</li>
+            </ul>
+          </div>
+          <div class="sec">
+            <h4>Opción 2: 1 escala (si sale mucho más barato)</h4>
+            <ul>
+              <li>Escalas típicas: <b>Dallas (DFW)</b>, <b>Los Ángeles (LAX)</b>, <b>San Francisco (SFO)</b>, <b>Seattle (SEA)</b>, <b>Vancouver (YVR)</b>.</li>
+              <li><span class="time">Tip:</span> evita escalas de &lt; 1h 30m para reducir riesgo de perder conexión.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px">
+          Búsqueda rápida: <a class="link" target="_blank" rel="noopener" href="https://www.google.com/travel/flights">Google Flights</a> · <a class="link" target="_blank" rel="noopener" href="https://www.united.com/">United</a> · <a class="link" target="_blank" rel="noopener" href="https://www.ana.co.jp/">ANA</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🧠 Tips clave para que el viaje sea fácil</h2>
+        <ul style="margin:8px 0 0 18px">
+          <li><b>IC Card (Suica/PASMO):</b> úsala para metro, tren local y tiendas de conveniencia. Si traes iPhone, revisa “Wallet” para versión digital.</li>
+          <li><b>Shinkansen:</b> compra boletos con antelación si viajas en fechas muy demandadas; asientos reservados reducen estrés.</li>
+          <li><b>Efectivo:</b> Japón sigue siendo “cash-friendly”. Saca yenes en 7-Eleven/JP Post.</li>
+          <li><b>Jet lag:</b> el Día 1 es para sobrevivir: comer ligero, caminar poco, dormir temprano.</li>
+          <li><b>Sakura:</b> prioriza mañanas (menos gente). Si llueve, mueve el hanami a un parque grande (más “aguanta”).</li>
+        </ul>
+        <div class="footnote">
+          🎟️ <b>teamLab Borderless</b>: entrada con horario fijo y se agota. Compra en cuanto tengas fechas cerradas.
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2>📸 Destination Gallery</h2>
+      <p class="subtitle-text">Preview the amazing places you'll visit on this adventure</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/chidorigafuchi_sakura_1768601959099.png" alt="Chidorigafuchi Sakura">
+          <div class="overlay">
+            <h3>Chidorigafuchi</h3>
+            <p>Cherry blossoms over the Imperial Palace moat</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/fushimi_inari_torii_1768601971006.png" alt="Fushimi Inari Torii Gates">
+          <div class="overlay">
+            <h3>Fushimi Inari Taisha</h3>
+            <p>Thousands of iconic red torii gates</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/nara_deer_park_1768601985046.png" alt="Nara Deer Park">
+          <div class="overlay">
+            <h3>Nara Park</h3>
+            <p>Friendly deer and Todai-ji Temple</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/dotonbori_osaka_night_1768601997560.png" alt="Dotonbori at Night">
+          <div class="overlay">
+            <h3>Dotonbori, Osaka</h3>
+            <p>Vibrant nightlife and street food scene</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/teamlab_borderless_art_1768602011674.png" alt="teamLab Borderless">
+          <div class="overlay">
+            <h3>teamLab Borderless</h3>
+            <p>Immersive digital art experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flights-section">
+      <h2>✈️ Available Flights</h2>
+      <p class="subtitle-text">Current flight options for March 28 - April 4, 2026 (Houston → Tokyo)</p>
+      
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-airline">United Airlines</div>
+          <div class="flight-price">
+            <span class="from">from</span> $1,245
+          </div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="code">IAH</div>
+            <div class="time">Mar 28, 12:30 PM</div>
+          </div>
+          <div class="flight-arrow">→</div>
+          <div class="flight-city">
+            <div class="code">NRT</div>
+            <div class="time">Mar 29, 4:15 PM</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail">
+            <span class="flight-badge nonstop">Nonstop</span>
+          </div>
+          <div class="flight-detail">⏱️ 14h 45m</div>
+          <div class="flight-detail">✈️ Boeing 787-9</div>
+          <div class="flight-detail">💺 Economy Available</div>
+        </div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-airline">ANA (All Nippon Airways)</div>
+          <div class="flight-price">
+            <span class="from">from</span> $1,389
+          </div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="code">IAH</div>
+            <div class="time">Mar 28, 11:00 AM</div>
+          </div>
+          <div class="flight-arrow">→</div>
+          <div class="flight-city">
+            <div class="code">HND</div>
+            <div class="time">Mar 29, 2:45 PM</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail">
+            <span class="flight-badge nonstop">Nonstop</span>
+          </div>
+          <div class="flight-detail">⏱️ 14h 45m</div>
+          <div class="flight-detail">✈️ Boeing 777-300ER</div>
+          <div class="flight-detail">💺 Premium Economy Available</div>
+        </div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-header">
+          <div class="flight-airline">American Airlines</div>
+          <div class="flight-price">
+            <span class="from">from</span> $1,089
+          </div>
+        </div>
+        <div class="flight-route">
+          <div class="flight-city">
+            <div class="code">IAH</div>
+            <div class="time">Mar 28, 6:45 AM</div>
+          </div>
+          <div class="flight-arrow">→</div>
+          <div class="flight-city">
+            <div class="code">NRT</div>
+            <div class="time">Mar 29, 5:30 PM</div>
+          </div>
+        </div>
+        <div class="flight-details">
+          <div class="flight-detail">
+            <span class="flight-badge stop">1 Stop</span>
+          </div>
+          <div class="flight-detail">⏱️ 17h 45m</div>
+          <div class="flight-detail">🔄 Via DFW (2h 15m layover)</div>
+          <div class="flight-detail">💺 Economy Available</div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:16px; text-align:center; font-size:13px">
+        💡 Prices are estimates and subject to change. Book early for best rates! Check <a class="link" href="https://www.google.com/travel/flights" target="_blank" rel="noopener">Google Flights</a> for real-time availability.
+      </p>
+    </section>
+
+    <section class="days" id="days">
+      <details class="day" open>
+        <summary>
+          <div class="dleft">1</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Tokyo · Llegada y adaptación</h3>
+              <span class="tag">✈️ Arribo HND/NRT</span>
+            </div>
+            <div class="dmeta">Objetivo: <b>no turistear</b>. Adaptarte al horario y descansar.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🌅 Mañana · Aeropuerto + básicos</h4>
+              <ul>
+                <li><span class="time">⏱️ 1.5–2.5 h</span> inmigración/aduana (depende del flujo).</li>
+                <li>Retiro de efectivo (ATM) + compra/activación de <b>Suica/PASMO</b>.</li>
+                <li>Si vas a usar datos: eSIM/SIM o pocket Wi‑Fi (según tu estilo).</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌤️ Tarde · Traslado + check-in</h4>
+              <ul>
+                <li>Traslado al hotel: <b>tren</b> (más barato) o <b>limousine bus</b> (más fácil con maletas).</li>
+                <li>Check‑in o resguardo de maletas.</li>
+                <li><span class="time">⏱️ 30–60 min</span> paseo corto por el barrio: ubica estación, konbini (7‑Eleven/Lawson/FamilyMart) y restaurantes.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Cena sencilla</h4>
+              <ul>
+                <li>Ramen · Donburi · Curry japonés (cualquier opción “comfort”).</li>
+                <li>Regreso temprano. Hidratación + dormir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">2</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Tokyo · Sakura + barrios urbanos</h3>
+              <span class="tag">🌸 Hanami</span>
+              <span class="tag">🧥 Vintage</span>
+            </div>
+            <div class="dmeta">Mañana sakura icónico · Tarde una zona (Asakusa <i>o</i> Shibuya) · Noche vintage.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🌸 Mañana · Sakura icónico <span class="star">★</span></h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Chidorigafuchi+Tokyo" target="_blank" rel="noopener"><b>Chidorigafuchi</b></a> <span class="star">★</span>: caminata junto al foso del Palacio Imperial.</li>
+                <li><span class="time">⏱️ 1–1.5 h</span> (sendero plano, fotos top).</li>
+                <li>Extra opcional: <a class="place-link" href="https://www.google.com/search?q=Kitanomaru+Park+Tokyo" target="_blank" rel="noopener"><b>Parque Kitanomaru</b></a> (5 min caminando, más tranquilo).</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌆 Tarde · Elige UNA zona (no conviene meter ambas)</h4>
+              <ul>
+                <li><b>Opción A – <a class="place-link" href="https://www.google.com/search?q=Asakusa+Tokyo" target="_blank" rel="noopener"></a>Asakusa</a></b>: <a class="place-link" href="https://www.google.com/search?q=Senso-ji+Temple+Tokyo" target="_blank" rel="noopener">Senso‑ji</a> + Nakamise (snacks/souvenirs), vibe tradicional.</li>
+                <li><b>Opción B – <a class="place-link" href="https://www.google.com/search?q=Shibuya+Tokyo" target="_blank" rel="noopener">Shibuya</a></b>: Cruce + tiendas + cafés, vibe moderna.</li>
+                <li><span class="time">⏱️ 2–3 h</span> tranquilas.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Vintage y alternativo</h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Shimokitazawa+Tokyo" target="_blank" rel="noopener"><b>Shimokitazawa</b></a> o <a class="place-link" href="https://www.google.com/search?q=Koenji+Tokyo" target="_blank" rel="noopener"><b>Koenji</b></a>: ropa vintage, discos, cafés pequeños.</li>
+                <li><span class="time">⏱️ ~2 h</span>. Ideal para “regalitos” y hallazgos.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">3</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Tokyo → Kyoto · Transición</h3>
+              <span class="tag">🚄 Shinkansen</span>
+            </div>
+            <div class="dmeta">Objetivo: llegar bien y guardar energía para Kyoto.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🌅 Mañana · Shinkansen</h4>
+              <ul>
+                <li><b>Tokyo → Kyoto</b> en Shinkansen.</li>
+                <li><span class="time">⏱️ 2 h 20 – 40 min</span> (según tipo de tren).</li>
+                <li>Compra un ekiben (bento) para comer en el tren: experiencia japonesa 10/10.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌤️ Tarde · Check‑in + paseo suave</h4>
+              <ul>
+                <li>Check‑in / resguardo de maletas.</li>
+                <li><a class="place-link" href="https://www.google.com/search?q=Kawaramachi+Kyoto" target="_blank" rel="noopener"><b>Kawaramachi</b></a>: zona céntrica con cafés, tiendas y calles agradables.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Cena económica</h4>
+              <ul>
+                <li>Udon · Ramen · set meals (teishoku).</li>
+                <li>Si te sobra energía: mini paseo por el río Kamo (muy chill).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">4</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Kyoto · Arcos rojos + sakura</h3>
+              <span class="tag">⛩️ Fushimi Inari</span>
+              <span class="tag">🌸 Philosopher’s Path</span>
+            </div>
+            <div class="dmeta">Torii rojos temprano · tarde caminable con sakura · noche Gion/Pontocho.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>⛩️ Mañana · Fushimi Inari Taisha <span class="star">★</span></h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Fushimi+Inari+Taisha+Kyoto" target="_blank" rel="noopener">Miles de torii rojos</a> en la montaña.</li>
+                <li><span class="time">⏱️ 45–90 min</span>. Recorre solo el primer tramo para fotos top sin agotarte.</li>
+                <li><span class="time">Tip:</span> ve lo más temprano posible para menos gente.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌸 Tarde · Combo caminable perfecto</h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Philosopher's+Path+Kyoto" target="_blank" rel="noopener"><b>Philosopher’s Path</b></a> <span class="star">★</span>: paseo plano junto al canal, sakura + templos pequeños.</li>
+                <li><span class="time">⏱️ 1.5–2 h</span>.</li>
+                <li>Extra opcional: <a class="place-link" href="https://www.google.com/search?q=Ginkaku-ji+Kyoto" target="_blank" rel="noopener"><b>Ginkaku‑ji</b></a> (Templo de Plata) al inicio del camino.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Kyoto clásico</h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Gion+Kyoto" target="_blank" rel="noopener"><b>Gion</b></a> <span class="star">★</span>: calles tradicionales, posible ver maiko/geiko (sin perseguirlas).</li>
+                <li><a class="place-link" href="https://www.google.com/search?q=Pontocho+Alley+Kyoto" target="_blank" rel="noopener"><b>Pontocho</b></a>: callejón con muchos restaurantes (reserva si quieres algo “bonito”).</li>
+                <li><span class="time">⏱️ ~2 h</span>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">5</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Nara · Excursión cultural</h3>
+              <span class="tag">🦌 Ciervos</span>
+              <span class="tag">🏯 Gran Buda</span>
+            </div>
+            <div class="dmeta">Todo está junto: parque + Todai‑ji. Regreso a Kyoto para dormir bien.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🚆 Mañana · Kyoto → Nara</h4>
+              <ul>
+                <li>Tren Kyoto → Nara.</li>
+                <li><span class="time">⏱️ ~45 min</span>.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌤️ Tarde · Imperdibles juntos</h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Nara+Park+Japan" target="_blank" rel="noopener"><b>Nara Park</b></a> <span class="star">★</span>: ciervos, jardines y vibe muy relajada.</li>
+                <li><a class="place-link" href="https://www.google.com/search?q=Todai-ji+Temple+Nara" target="_blank" rel="noopener"><b>Todai‑ji</b></a> <span class="star">★</span>: Gran Buda y un templo enorme e impresionante.</li>
+                <li><span class="time">⏱️ 3–4 h</span> total.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Regreso a Kyoto</h4>
+              <ul>
+                <li>Regreso temprano para descansar.</li>
+                <li>Si traes antojo: postre en konbini (sí, es parte del viaje).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">6</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Osaka · Sakura + ciudad vibrante</h3>
+              <span class="tag">🌸 Castillo</span>
+              <span class="tag">🌆 Dotonbori</span>
+            </div>
+            <div class="dmeta">Castillo por la tarde · noche de comida callejera y luces.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🚆 Mañana · Kyoto → Osaka</h4>
+              <ul>
+                <li>Kyoto → Osaka.</li>
+                <li><span class="time">⏱️ ~30 min</span>.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌸 Tarde · Osaka Castle Park <span class="star">★</span></h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Osaka+Castle+Park" target="_blank" rel="noopener">Hanami + vistas del castillo</a> + parque amplio.</li>
+                <li><span class="time">⏱️ ~2 h</span>.</li>
+                <li>Extra opcional: museos o jardines exteriores del castillo.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Dotonbori + Namba <span class="star">★</span></h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=Dotonbori+Osaka" target="_blank" rel="noopener">Takoyaki · Okonomiyaki · ramen · luces icónicas</a>.</li>
+                <li><span class="time">⏱️ 2–3 h</span>. Perfecto para fotos nocturnas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="day">
+        <summary>
+          <div class="dleft">7</div>
+          <div class="dmain">
+            <div class="dtitle">
+              <h3>Tokyo · teamLab + regreso</h3>
+              <span class="tag">🎨 Borderless</span>
+              <span class="tag">✈️ Vuelo</span>
+            </div>
+            <div class="dmeta">Regreso a Tokyo por la mañana · teamLab por la tarde · aeropuerto por la noche.</div>
+          </div>
+        </summary>
+        <div class="content">
+          <div class="sections">
+            <div class="sec">
+              <h4>🚄 Mañana · Shinkansen a Tokyo</h4>
+              <ul>
+                <li><b>Osaka/Kyoto → Tokyo</b>.</li>
+                <li><span class="time">⏱️ ~2.5 h</span>.</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🎨 Tarde · teamLab Borderless <span class="star">★</span></h4>
+              <ul>
+                <li><a class="place-link" href="https://www.google.com/search?q=teamLab+Borderless+Tokyo" target="_blank" rel="noopener">Arte digital inmersivo</a> (de lo más memorable del viaje).</li>
+                <li><span class="time">⏱️ 1.5–2 h</span>.</li>
+                <li><b>Entrada con horario fijo</b>: compra anticipada.</li>
+                <li>Extra opcional: <a class="place-link" href="https://www.google.com/search?q=Azabudai+Hills+Tokyo" target="_blank" rel="noopener"><b>Azabudai Hills</b></a> (cafés, arquitectura moderna, miradores).</li>
+              </ul>
+            </div>
+            <div class="sec">
+              <h4>🌙 Noche · Aeropuerto + vuelo a Houston</h4>
+              <ul>
+                <li>Sal con margen: equipaje + traslado + seguridad.</li>
+                <li><span class="time">Tip:</span> si vuelas de NRT, el traslado suele tomar más tiempo que HND.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </section>
+
+    <section class="grid" style="margin-top:16px">
+      <div class="card">
+        <h2>📍 Links rápidos (Google Maps)</h2>
+        <p class="muted">Abre en una pestaña nueva. Útil para “guardar” cada spot en tu lista.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px">
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chidorigafuchi">Chidorigafuchi</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kitanomaru+Park">Kitanomaru Park</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Senso-ji">Senso‑ji</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing">Shibuya Crossing</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shimokitazawa">Shimokitazawa</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha">Fushimi Inari</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Philosopher%27s+Path+Kyoto">Philosopher’s Path</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto">Gion</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pontocho+Alley">Pontocho</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nara+Park">Nara Park</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Todaiji">Todai‑ji</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle+Park">Osaka Castle Park</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dotonbori">Dotonbori</a>
+          <a class="pill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=teamLab+Borderless">teamLab Borderless</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>✅ Checklist rápido (copiable)</h2>
+        <pre id="checklist" style="white-space:pre-wrap; margin:0; padding:12px; border-radius:16px; border:1px solid rgba(0,0,0,.1); background: rgba(124,92,255,.04); color:#1e293b; overflow:auto;">DOCUMENTOS
+[ ] Pasaporte + copia (digital y física)
+[ ] eTA/visas (si aplica)
+[ ] Seguro de viaje
+
+DINERO / DATOS
+[ ] 1 tarjeta sin comisiones + 1 respaldo
+[ ] Efectivo inicial (o plan de ATM en 7-Eleven)
+[ ] eSIM/SIM/pocket Wi‑Fi
+
+TRANSPORTE
+[ ] Suica/PASMO (física o en Wallet)
+[ ] Boletos Shinkansen (Tokyo↔Kyoto, Kyoto↔Tokyo)
+
+RESERVAS
+[ ] Hotel Tokyo
+[ ] Hotel Kyoto
+[ ] teamLab Borderless (horario fijo)
+
+EQUIPAJE
+[ ] Adaptador de corriente
+[ ] Tenis cómodos + calcetines extra
+[ ] Chamarra ligera (primavera)
+[ ] Power bank
+
+EXTRAS
+[ ] Lista de spots en Google Maps
+[ ] Apps útiles: Google Maps, Translate, Navitime (opcional)</pre>
+        <p class="muted" style="margin-top:10px">Tip: pega este checklist en Notas / Google Keep y marca en el camino.</p>
+      </div>
+    </section>
+
+    <div class="footnote" style="margin-top:16px">
+      <b>Nota sobre vuelos:</b> horarios y disponibilidad cambian por temporada. Este plan asume llegada a Tokyo (HND/NRT) el Día 1 y regreso la noche del Día 7.
+      <br/>
+      <span class="muted">Fuentes sugeridas para validar rutas: sitios oficiales de aerolíneas y metabuscadores.</span>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Copiado ✅</div>
+
+  <script>
+    const days = [...document.querySelectorAll('details.day')];
+    const btnExpand = document.getElementById('btnExpand');
+    const btnCollapse = document.getElementById('btnCollapse');
+    const btnCopy = document.getElementById('btnCopy');
+    const checklist = document.getElementById('checklist');
+    const toast = document.getElementById('toast');
+
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => toast.style.display = 'none', 1200);
+    }
+
+    btnExpand.addEventListener('click', () => {
+      days.forEach(d => d.open = true);
+      showToast('Días abiertos ✅');
+    });
+
+    btnCollapse.addEventListener('click', () => {
+      days.forEach(d => d.open = false);
+      showToast('Días cerrados ✅');
+    });
+
+    btnCopy.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(checklist.textContent.trim());
+        showToast('Checklist copiado ✅');
+      }catch(e){
+        // fallback
+        const r = document.createRange();
+        r.selectNodeContents(checklist);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+        document.execCommand('copy');
+        sel.removeAllRanges();
+        showToast('Checklist copiado ✅');
+      }
+    });
+  </script>
+</body>
+</html>
