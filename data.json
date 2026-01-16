@@ -34,44 +34,44 @@
   "flights": [
     {
       "airline": "United Airlines",
-      "price": "$1,245",
+      "price": "$1,450",
       "route": {
-        "from": { "code": "IAH", "time": "Mar 28, 12:30 PM" },
-        "to": { "code": "NRT", "time": "Mar 29, 4:15 PM" }
+        "from": { "code": "IAH", "time": "10:30 AM" },
+        "to": { "code": "NRT", "time": "3:30 PM (+1)" }
       },
       "details": [
         { "type": "badge", "text": "Nonstop", "class": "nonstop" },
-        { "type": "text", "text": "⏱️ 14h 45m" },
+        { "type": "text", "text": "⏱️ 14h 00m" },
         { "type": "text", "text": "✈️ Boeing 787-9" },
         { "type": "text", "text": "💺 Economy Available" }
       ]
     },
     {
       "airline": "ANA (All Nippon Airways)",
-      "price": "$1,389",
+      "price": "$1,390",
       "route": {
-        "from": { "code": "IAH", "time": "Mar 28, 11:00 AM" },
-        "to": { "code": "HND", "time": "Mar 29, 2:45 PM" }
+        "from": { "code": "IAH", "time": "11:15 AM" },
+        "to": { "code": "HND", "time": "4:00 PM (+1)" }
       },
       "details": [
         { "type": "badge", "text": "Nonstop", "class": "nonstop" },
-        { "type": "text", "text": "⏱️ 14h 45m" },
+        { "type": "text", "text": "⏱️ 13h 45m" },
         { "type": "text", "text": "✈️ Boeing 777-300ER" },
         { "type": "text", "text": "💺 Premium Economy Available" }
       ]
     },
     {
-      "airline": "American Airlines",
-      "price": "$1,089",
+      "airline": "ZIPAIR",
+      "price": "$685",
       "route": {
-        "from": { "code": "IAH", "time": "Mar 28, 6:45 AM" },
-        "to": { "code": "NRT", "time": "Mar 29, 5:30 PM" }
+        "from": { "code": "IAH", "time": "8:00 AM" },
+        "to": { "code": "NRT", "time": "2:30 PM (+1)" }
       },
       "details": [
         { "type": "badge", "text": "1 Stop", "class": "stop" },
-        { "type": "text", "text": "⏱️ 17h 45m" },
-        { "type": "text", "text": "🔄 Via DFW (2h 15m layover)" },
-        { "type": "text", "text": "💺 Economy Available" }
+        { "type": "text", "text": "⏱️ 15h 20m" },
+        { "type": "text", "text": "🔄 Via LAX" },
+        { "type": "text", "text": "💺 Standard" }
       ]
     }
   ],

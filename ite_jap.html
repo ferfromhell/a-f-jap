@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ana & Fer - Japón Express (7 días) · Houston → Tokyo</title>
   <meta name="description" content="Itinerario Japón Express (7 días) con sakura, Kyoto, Nara, Osaka y teamLab. Incluye vuelos sugeridos desde Houston a Tokyo." />
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <div class="wrap">
@@ -91,6 +91,10 @@
       </div>
     </section>
 
+    <section class="days" id="days-container">
+      <!-- Days will be injected here -->
+    </section>
+
     <section class="gallery-section">
       <h2>📸 Destination Gallery</h2>
       <p class="subtitle-text">Preview the amazing places you'll visit on this adventure</p>
@@ -102,6 +106,12 @@
     <section class="flights-section">
       <h2>✈️ Available Flights</h2>
       <p class="subtitle-text">Current flight options for March 28 - April 4, 2026 (Houston → Tokyo)</p>
+      
+      <div style="text-align:center; margin-bottom:20px;">
+        <button id="btnRefresh" class="btn primary" style="font-size:14px; padding:8px 16px;">
+          🔄 Refresh Prices
+        </button>
+      </div>
       <div class="flights-container">
         <!-- Flight items will be injected here -->
       </div>
@@ -109,10 +119,6 @@
       <p class="muted" style="margin-top:16px; text-align:center; font-size:13px">
         💡 Prices are estimates and subject to change. Book early for best rates! Check <a class="link" href="https://www.google.com/travel/flights" target="_blank" rel="noopener">Google Flights</a> for real-time availability.
       </p>
-    </section>
-
-    <section class="days" id="days-container">
-      <!-- Days will be injected here -->
     </section>
 
     <section class="grid" style="margin-top:16px">

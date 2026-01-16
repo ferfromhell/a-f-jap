@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('data.json');
     const data = await response.json();
-    
+
     renderGallery(data.gallery);
     renderFlights(data.flights);
     renderDays(data.days);
-    
+
     // Re-initialize event listeners after DOM is populated
     initInteractions();
-    
+
   } catch (error) {
     console.error('Error loading data:', error);
   }
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function renderGallery(galleryData) {
   const container = document.querySelector('.gallery-grid');
   if (!container) return;
-  
+
   container.innerHTML = galleryData.map(item => `
     <div class="gallery-item">
       <img src="${item.img}" alt="${item.alt}">
@@ -34,7 +34,7 @@ function renderGallery(galleryData) {
 function renderFlights(flightsData) {
   const container = document.querySelector('.flights-container'); // Need to add this class to the container in HTML
   if (!container) return;
-  
+
   container.innerHTML = flightsData.map(flight => `
     <div class="flight-card">
       <div class="flight-header">
@@ -56,12 +56,12 @@ function renderFlights(flightsData) {
       </div>
       <div class="flight-details">
         ${flight.details.map(detail => {
-          if (detail.type === 'badge') {
-            return `<div class="flight-detail"><span class="flight-badge ${detail.class}">${detail.text}</span></div>`;
-          } else {
-            return `<div class="flight-detail">${detail.text}</div>`;
-          }
-        }).join('')}
+    if (detail.type === 'badge') {
+      return `<div class="flight-detail"><span class="flight-badge ${detail.class}">${detail.text}</span></div>`;
+    } else {
+      return `<div class="flight-detail">${detail.text}</div>`;
+    }
+  }).join('')}
       </div>
     </div>
   `).join('');
@@ -70,7 +70,7 @@ function renderFlights(flightsData) {
 function renderDays(daysData) {
   const container = document.getElementById('days-container'); // Need to add id="days-container" to the section
   if (!container) return;
-  
+
   container.innerHTML = daysData.map(day => `
     <details class="day" ${day.day === 1 ? 'open' : ''}>
       <summary>
@@ -107,33 +107,33 @@ function initInteractions() {
   const checklist = document.getElementById('checklist');
   const toast = document.getElementById('toast');
 
-  function showToast(msg){
+  function showToast(msg) {
     toast.textContent = msg;
     toast.style.display = 'block';
     if (showToast._t) clearTimeout(showToast._t);
     showToast._t = setTimeout(() => toast.style.display = 'none', 1200);
   }
 
-  if(btnExpand) {
+  if (btnExpand) {
     btnExpand.addEventListener('click', () => {
       days.forEach(d => d.open = true);
       showToast('Días abiertos ✅');
     });
   }
 
-  if(btnCollapse) {
+  if (btnCollapse) {
     btnCollapse.addEventListener('click', () => {
       days.forEach(d => d.open = false);
       showToast('Días cerrados ✅');
     });
   }
 
-  if(btnCopy) {
+  if (btnCopy) {
     btnCopy.addEventListener('click', async () => {
-      try{
+      try {
         await navigator.clipboard.writeText(checklist.textContent.trim());
         showToast('Checklist copiado ✅');
-      }catch(e){
+      } catch (e) {
         // fallback
         const r = document.createRange();
         r.selectNodeContents(checklist);
@@ -144,6 +144,37 @@ function initInteractions() {
         sel.removeAllRanges();
         showToast('Checklist copiado ✅');
       }
+    });
+  }
+
+  const btnRefresh = document.getElementById('btnRefresh');
+  if (btnRefresh) {
+    btnRefresh.addEventListener('click', async () => {
+      const originalText = btnRefresh.innerHTML;
+      btnRefresh.innerHTML = '🔄 Checking...';
+      btnRefresh.style.opacity = '0.7';
+      btnRefresh.disabled = true;
+
+      // Simulate network request
+      await new Promise(r => setTimeout(r, 1500));
+
+      // Update flight prices with slight random variation to simulate live updates
+      const flights = document.querySelectorAll('.flight-price');
+      flights.forEach(el => {
+        // Extract number, e.g. "$1,450" -> 1450
+        let current = parseInt(el.textContent.replace(/[^0-9]/g, ''));
+        if (!isNaN(current)) {
+          // Random variation ±$50
+          let variation = Math.floor(Math.random() * 100) - 50;
+          let newPrice = current + variation;
+          el.innerHTML = `<span class="from">from</span> $${newPrice.toLocaleString()}`;
+        }
+      });
+
+      btnRefresh.innerHTML = originalText;
+      btnRefresh.style.opacity = '1';
+      btnRefresh.disabled = false;
+      showToast('Prices Updated ⚡️');
     });
   }
 }
