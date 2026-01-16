@@ -37,7 +37,34 @@
     .main-title{
       text-align:center;
       margin-bottom:32px;
-      padding:24px 0;
+      padding:48px 24px;
+      background: linear-gradient(135deg, rgba(124,92,255,.08) 0%, rgba(255,107,157,.08) 50%, rgba(255,165,0,.08) 100%);
+      border-radius:var(--radius);
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(124,92,255,.15);
+    }
+    .main-title:before{
+      content:"";
+      position:absolute;
+      top:-50%;
+      right:-10%;
+      width:300px;
+      height:300px;
+      background: radial-gradient(circle, rgba(124,92,255,.15), transparent 70%);
+      border-radius:50%;
+      pointer-events:none;
+    }
+    .main-title:after{
+      content:"";
+      position:absolute;
+      bottom:-30%;
+      left:-5%;
+      width:250px;
+      height:250px;
+      background: radial-gradient(circle, rgba(255,107,157,.12), transparent 70%);
+      border-radius:50%;
+      pointer-events:none;
     }
     .main-title h1{
       font-size:clamp(42px, 8vw, 72px);
@@ -518,35 +545,35 @@
       <p class="subtitle-text">Preview the amazing places you'll visit on this adventure</p>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/chidorigafuchi_sakura_1768601959099.png" alt="Chidorigafuchi Sakura">
+          <img src="images/chidorigafuchi.png" alt="Chidorigafuchi Sakura">
           <div class="overlay">
             <h3>Chidorigafuchi</h3>
             <p>Cherry blossoms over the Imperial Palace moat</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/fushimi_inari_torii_1768601971006.png" alt="Fushimi Inari Torii Gates">
+          <img src="images/fushimi_inari.png" alt="Fushimi Inari Torii Gates">
           <div class="overlay">
             <h3>Fushimi Inari Taisha</h3>
             <p>Thousands of iconic red torii gates</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/nara_deer_park_1768601985046.png" alt="Nara Deer Park">
+          <img src="images/nara_park.png" alt="Nara Deer Park">
           <div class="overlay">
             <h3>Nara Park</h3>
             <p>Friendly deer and Todai-ji Temple</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/dotonbori_osaka_night_1768601997560.png" alt="Dotonbori at Night">
+          <img src="images/dotonbori.png" alt="Dotonbori at Night">
           <div class="overlay">
             <h3>Dotonbori, Osaka</h3>
             <p>Vibrant nightlife and street food scene</p>
           </div>
         </div>
         <div class="gallery-item">
-          <img src="/Users/flujan/.gemini/antigravity/brain/c293ae95-4afa-43b5-badf-d0ac7767a893/teamlab_borderless_art_1768602011674.png" alt="teamLab Borderless">
+          <img src="images/teamlab.png" alt="teamLab Borderless">
           <div class="overlay">
             <h3>teamLab Borderless</h3>
             <p>Immersive digital art experience</p>
