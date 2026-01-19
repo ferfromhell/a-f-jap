@@ -1,15 +1,15 @@
 // netlify/functions/api.js
-
-import express, { Router } from 'express';
-import serverless from "serverless-http";
-import fetch from "node-fetch";
+const express = require('express');
+const serverless = require('serverless-http');
+// node-fetch v2 is CJS compatible
+const fetch = require('node-fetch');
 
 const api = express();
-const router = Router();
+const router = express.Router();
 
 // Test route
 router.get('/test', (req, res) => {
-  res.json({ message: 'Test route working!' });
+  res.json({ message: 'Test route working!', timestamp: new Date().toISOString() });
 });
 
 // Define flight route
@@ -23,7 +23,6 @@ router.get('/flights', async (req, res) => {
   try {
     const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=IAH&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
 
-    // Using node-fetch
     const response = await fetch(targetUrl);
 
     if (!response.ok) {
@@ -73,5 +72,5 @@ router.get('/flights', async (req, res) => {
 api.use('/api/', router);
 
 // Export handler
-export const handler = serverless(api);
+module.exports.handler = serverless(api);
 
