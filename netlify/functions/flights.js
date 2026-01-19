@@ -1,5 +1,5 @@
-// functions/flights.js
-const fetch = require('node-fetch');
+// netlify/functions/flights.js
+// No need for node-fetch if using Node 18+ (default on Netlify)
 
 exports.handler = async (event, context) => {
   const SERPAPI_KEY = process.env.SERPAPI_KEY;
