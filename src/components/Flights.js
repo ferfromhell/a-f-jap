@@ -18,15 +18,13 @@ function Flights({ flightsData }) {
     try {
       const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=IAH&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
 
-      // Using a CORS proxy because SerpApi doesn't allow direct browser requests
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
+      // Switching to corsproxy.io which is often more stable than allorigins
+      const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
 
       const response = await fetch(proxyUrl);
-      if (!response.ok) throw new Error('Network response was not ok');
+      if (!response.ok) throw new Error(`Proxy error: ${response.status}`);
 
-      const proxyData = await response.json();
-      const data = JSON.parse(proxyData.contents); // AllOrigins wraps the result in 'contents'
-
+      const data = await response.json();
       const rawFlights = data.best_flights || data.other_flights || [];
 
       if (rawFlights.length === 0) {
