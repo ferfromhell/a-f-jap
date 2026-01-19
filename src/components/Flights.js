@@ -27,6 +27,19 @@ function Flights({ flightsData }) {
     }
   };
 
+  const handleTestApi = async () => {
+    try {
+      const response = await fetch('/api/test');
+      if (!response.ok) {
+        throw new Error(`Status: ${response.status}`);
+      }
+      const data = await response.json();
+      alert(`API Test Success: ${JSON.stringify(data)}`);
+    } catch (error) {
+      alert(`API Test Failed: ${error.message}`);
+    }
+  };
+
   if (!flights) return null;
 
   return (
@@ -43,6 +56,13 @@ function Flights({ flightsData }) {
           disabled={isRefreshing}
         >
           {isRefreshing ? '🔄 Checking...' : '🔄 Refresh Prices'}
+        </button>
+        <button
+          className="btn secondary"
+          style={{ fontSize: '12px', padding: '8px 12px', marginLeft: '10px', background: '#444', color: '#fff' }}
+          onClick={handleTestApi}
+        >
+          🧪 Test Connection
         </button>
       </div>
 
