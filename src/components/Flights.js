@@ -5,31 +5,69 @@ function Flights({ flightsData }) {
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const handleRefresh = async () => {
+    // ⚠️ IMPORTANT: In a real production app, you should call your own backend 
+    // to hide your API Key. Calling SerpApi directly from frontend exposes your key.
+    const SERPAPI_KEY = "YOUR_SERPAPI_KEY_HERE";
+
+    if (SERPAPI_KEY === "YOUR_SERPAPI_KEY_HERE") {
+      alert("Please set your SerpApi Key in Flights.js to use real data!");
+      return;
+    }
+
     setIsRefreshing(true);
 
-    // Simulate network request
-    await new Promise(r => setTimeout(r, 1500));
+    try {
+      const url = `https://serpapi.com/search.json?engine=google_flights&departure_id=IAH&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
 
-    // Update prices with random variation
-    const newFlights = flights.map(flight => {
-      // Extract numeric price, e.g. "$1,450" -> 1450
-      const priceNum = parseInt(flight.price.replace(/[^0-9]/g, ''));
-      if (isNaN(priceNum)) return flight;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Network response was not ok');
 
-      const variation = Math.floor(Math.random() * 100) - 50;
-      const newPrice = priceNum + variation;
+      const data = await response.json();
+      const rawFlights = data.best_flights || data.other_flights || [];
 
-      return {
-        ...flight,
-        price: `$${newPrice.toLocaleString()}`
-      };
-    });
+      if (rawFlights.length === 0) {
+        alert("No flights found for these dates.");
+        setIsRefreshing(false);
+        return;
+      }
 
-    setFlights(newFlights);
-    setIsRefreshing(false);
+      // Map SerpApi results to our component's format
+      const newFlights = rawFlights.slice(0, 3).map(f => {
+        const firstLeg = f.flights[0];
+        const lastLeg = f.flights[f.flights.length - 1];
 
-    // Basic alert or toast could be added here, but simplicity for now
-    alert('Prices Updated ⚡️');
+        return {
+          airline: firstLeg.airline,
+          price: `$${f.price.toLocaleString()}`,
+          route: {
+            from: {
+              code: firstLeg.departure_airport.id,
+              time: firstLeg.departure_airport.time.split(' ')[1] + ' ' + firstLeg.departure_airport.time.split(' ')[2]
+            },
+            to: {
+              code: lastLeg.arrival_airport.id,
+              time: lastLeg.arrival_airport.time.split(' ')[1] + ' ' + lastLeg.arrival_airport.time.split(' ')[2]
+            }
+          },
+          details: [
+            {
+              type: 'badge',
+              class: f.flights.length === 1 ? 'nonstop' : 'transit',
+              text: f.flights.length === 1 ? 'Nonstop' : `${f.flights.length - 1} stops`
+            },
+            { text: `${Math.floor(f.total_duration / 60)}h ${f.total_duration % 60}m` }
+          ]
+        };
+      });
+
+      setFlights(newFlights);
+      alert('Prices Updated with Real Data ⚡️');
+    } catch (error) {
+      console.error("Error fetching flights:", error);
+      alert("Failed to fetch flight data. Check console and CORS settings.");
+    } finally {
+      setIsRefreshing(false);
+    }
   };
 
   if (!flights) return null;
