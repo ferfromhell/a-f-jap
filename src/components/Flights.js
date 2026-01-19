@@ -64,6 +64,13 @@ function Flights({ flightsData }) {
         >
           🧪 Test Connection
         </button>
+        <button
+          className="btn secondary"
+          style={{ fontSize: '12px', padding: '8px 12px', marginLeft: '10px', background: '#222', color: '#fff' }}
+          onClick={handleTestHelloWorld}
+        >
+          👋 Hello World
+        </button>
       </div>
 
       <div className="flights-container">
