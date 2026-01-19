@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/a-f-jap/static/css/main.ec9f1ed3.css",
+    "main.js": "/a-f-jap/static/js/main.3b561842.js",
+    "static/js/453.7d2ec01e.chunk.js": "/a-f-jap/static/js/453.7d2ec01e.chunk.js",
+    "static/media/header-bg.png": "/a-f-jap/static/media/header-bg.16f7dbb30fe16cc7ae56.png",
+    "index.html": "/a-f-jap/index.html",
+    "main.ec9f1ed3.css.map": "/a-f-jap/static/css/main.ec9f1ed3.css.map",
+    "main.3b561842.js.map": "/a-f-jap/static/js/main.3b561842.js.map",
+    "453.7d2ec01e.chunk.js.map": "/a-f-jap/static/js/453.7d2ec01e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec9f1ed3.css",
+    "static/js/main.3b561842.js"
+  ]
+}
