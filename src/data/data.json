@@ -1,0 +1,295 @@
+{
+  "gallery": [
+    {
+      "img": "images/chidorigafuchi.png",
+      "alt": "Chidorigafuchi Sakura",
+      "title": "Chidorigafuchi",
+      "desc": "Cherry blossoms over the Imperial Palace moat"
+    },
+    {
+      "img": "images/fushimi_inari.png",
+      "alt": "Fushimi Inari Torii Gates",
+      "title": "Fushimi Inari Taisha",
+      "desc": "Thousands of iconic red torii gates"
+    },
+    {
+      "img": "images/nara_park.png",
+      "alt": "Nara Deer Park",
+      "title": "Nara Park",
+      "desc": "Friendly deer and Todai-ji Temple"
+    },
+    {
+      "img": "images/dotonbori.png",
+      "alt": "Dotonbori at Night",
+      "title": "Dotonbori, Osaka",
+      "desc": "Vibrant nightlife and street food scene"
+    },
+    {
+      "img": "images/teamlab.png",
+      "alt": "teamLab Borderless",
+      "title": "teamLab Borderless",
+      "desc": "Immersive digital art experience"
+    }
+  ],
+  "flights": [
+    {
+      "airline": "United Airlines",
+      "price": "$1,450",
+      "route": {
+        "from": { "code": "IAH", "time": "10:30 AM" },
+        "to": { "code": "NRT", "time": "3:30 PM (+1)" }
+      },
+      "details": [
+        { "type": "badge", "text": "Nonstop", "class": "nonstop" },
+        { "type": "text", "text": "⏱️ 14h 00m" },
+        { "type": "text", "text": "✈️ Boeing 787-9" },
+        { "type": "text", "text": "💺 Economy Available" }
+      ]
+    },
+    {
+      "airline": "ANA (All Nippon Airways)",
+      "price": "$1,390",
+      "route": {
+        "from": { "code": "IAH", "time": "11:15 AM" },
+        "to": { "code": "HND", "time": "4:00 PM (+1)" }
+      },
+      "details": [
+        { "type": "badge", "text": "Nonstop", "class": "nonstop" },
+        { "type": "text", "text": "⏱️ 13h 45m" },
+        { "type": "text", "text": "✈️ Boeing 777-300ER" },
+        { "type": "text", "text": "💺 Premium Economy Available" }
+      ]
+    },
+    {
+      "airline": "ZIPAIR",
+      "price": "$685",
+      "route": {
+        "from": { "code": "IAH", "time": "8:00 AM" },
+        "to": { "code": "NRT", "time": "2:30 PM (+1)" }
+      },
+      "details": [
+        { "type": "badge", "text": "1 Stop", "class": "stop" },
+        { "type": "text", "text": "⏱️ 15h 20m" },
+        { "type": "text", "text": "🔄 Via LAX" },
+        { "type": "text", "text": "💺 Standard" }
+      ]
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Tokyo · Llegada y adaptación",
+      "tags": ["✈️ Arribo HND/NRT"],
+      "meta": "Objetivo: <b>no turistear</b>. Adaptarte al horario y descansar.",
+      "content": [
+        {
+          "title": "🌅 Mañana · Aeropuerto + básicos",
+          "list": [
+            "<span class=\"time\">⏱️ 1.5–2.5 h</span> inmigración/aduana (depende del flujo).",
+            "Retiro de efectivo (ATM) + compra/activación de <b>Suica/PASMO</b>.",
+            "Si vas a usar datos: eSIM/SIM o pocket Wi‑Fi (según tu estilo)."
+          ]
+        },
+        {
+          "title": "🌤️ Tarde · Traslado + check-in",
+          "list": [
+            "Traslado al hotel: <b>tren</b> (más barato) o <b>limousine bus</b> (más fácil con maletas).",
+            "Check‑in o resguardo de maletas.",
+            "<span class=\"time\">⏱️ 30–60 min</span> paseo corto por el barrio: ubica estación, konbini (7‑Eleven/Lawson/FamilyMart) y restaurantes."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Cena sencilla",
+          "list": [
+            "Ramen · Donburi · Curry japonés (cualquier opción “comfort”).",
+            "Regreso temprano. Hidratación + dormir."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Tokyo · Sakura + barrios urbanos",
+      "tags": ["🌸 Hanami", "🧥 Vintage"],
+      "meta": "Mañana sakura icónico · Tarde una zona (Asakusa <i>o</i> Shibuya) · Noche vintage.",
+      "content": [
+        {
+          "title": "🌸 Mañana · Sakura icónico <span class=\"star\">★</span>",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Chidorigafuchi+Tokyo\" target=\"_blank\" rel=\"noopener\"><b>Chidorigafuchi</b></a> <span class=\"star\">★</span>: caminata junto al foso del Palacio Imperial.",
+            "<span class=\"time\">⏱️ 1–1.5 h</span> (sendero plano, fotos top).",
+            "Extra opcional: <a class=\"place-link\" href=\"https://www.google.com/search?q=Kitanomaru+Park+Tokyo\" target=\"_blank\" rel=\"noopener\"><b>Parque Kitanomaru</b></a> (5 min caminando, más tranquilo)."
+          ]
+        },
+        {
+          "title": "🌆 Tarde · Elige UNA zona (no conviene meter ambas)",
+          "list": [
+            "<b>Opción A – <a class=\"place-link\" href=\"https://www.google.com/search?q=Asakusa+Tokyo\" target=\"_blank\" rel=\"noopener\">Asakusa</a></b>: <a class=\"place-link\" href=\"https://www.google.com/search?q=Senso-ji+Temple+Tokyo\" target=\"_blank\" rel=\"noopener\">Senso‑ji</a> + Nakamise (snacks/souvenirs), vibe tradicional.",
+            "<b>Opción B – <a class=\"place-link\" href=\"https://www.google.com/search?q=Shibuya+Tokyo\" target=\"_blank\" rel=\"noopener\">Shibuya</a></b>: Cruce + tiendas + cafés, vibe moderna.",
+            "<span class=\"time\">⏱️ 2–3 h</span> tranquilas."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Vintage y alternativo",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Shimokitazawa+Tokyo\" target=\"_blank\" rel=\"noopener\"><b>Shimokitazawa</b></a> o <a class=\"place-link\" href=\"https://www.google.com/search?q=Koenji+Tokyo\" target=\"_blank\" rel=\"noopener\"><b>Koenji</b></a>: ropa vintage, discos, cafés pequeños.",
+            "<span class=\"time\">⏱️ ~2 h</span>. Ideal para “regalitos” y hallazgos."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Tokyo → Kyoto · Transición",
+      "tags": ["🚄 Shinkansen"],
+      "meta": "Objetivo: llegar bien y guardar energía para Kyoto.",
+      "content": [
+        {
+          "title": "🌅 Mañana · Shinkansen",
+          "list": [
+            "<b>Tokyo → Kyoto</b> en Shinkansen.",
+            "<span class=\"time\">⏱️ 2 h 20 – 40 min</span> (según tipo de tren).",
+            "Compra un ekiben (bento) para comer en el tren: experiencia japonesa 10/10."
+          ]
+        },
+        {
+          "title": "🌤️ Tarde · Check‑in + paseo suave",
+          "list": [
+            "Check‑in / resguardo de maletas.",
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Kawaramachi+Kyoto\" target=\"_blank\" rel=\"noopener\"><b>Kawaramachi</b></a>: zona céntrica con cafés, tiendas y calles agradables."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Cena económica",
+          "list": [
+            "Udon · Ramen · set meals (teishoku).",
+            "Si te sobra energía: mini paseo por el río Kamo (muy chill)."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Kyoto · Arcos rojos + sakura",
+      "tags": ["⛩️ Fushimi Inari", "🌸 Philosopher’s Path"],
+      "meta": "Torii rojos temprano · tarde caminable con sakura · noche Gion/Pontocho.",
+      "content": [
+        {
+          "title": "⛩️ Mañana · Fushimi Inari Taisha <span class=\"star\">★</span>",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Fushimi+Inari+Taisha+Kyoto\" target=\"_blank\" rel=\"noopener\">Miles de torii rojos</a> en la montaña.",
+            "<span class=\"time\">⏱️ 45–90 min</span>. Recorre solo el primer tramo para fotos top sin agotarte.",
+            "<span class=\"time\">Tip:</span> ve lo más temprano posible para menos gente."
+          ]
+        },
+        {
+          "title": "🌸 Tarde · Combo caminable perfecto",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Philosopher's+Path+Kyoto\" target=\"_blank\" rel=\"noopener\"><b>Philosopher’s Path</b></a> <span class=\"star\">★</span>: paseo plano junto al canal, sakura + templos pequeños.",
+            "<span class=\"time\">⏱️ 1.5–2 h</span>.",
+            "Extra opcional: <a class=\"place-link\" href=\"https://www.google.com/search?q=Ginkaku-ji+Kyoto\" target=\"_blank\" rel=\"noopener\"><b>Ginkaku‑ji</b></a> (Templo de Plata) al inicio del camino."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Kyoto clásico",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Gion+Kyoto\" target=\"_blank\" rel=\"noopener\"><b>Gion</b></a> <span class=\"star\">★</span>: calles tradicionales, posible ver maiko/geiko (sin perseguirlas).",
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Pontocho+Alley+Kyoto\" target=\"_blank\" rel=\"noopener\"><b>Pontocho</b></a>: callejón con muchos restaurantes (reserva si quieres algo “bonito”).",
+            "<span class=\"time\">⏱️ ~2 h</span>."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Nara · Excursión cultural",
+      "tags": ["🦌 Ciervos", "🏯 Gran Buda"],
+      "meta": "Todo está junto: parque + Todai‑ji. Regreso a Kyoto para dormir bien.",
+      "content": [
+        {
+          "title": "🚆 Mañana · Kyoto → Nara",
+          "list": [
+            "Tren Kyoto → Nara.",
+            "<span class=\"time\">⏱️ ~45 min</span>."
+          ]
+        },
+        {
+          "title": "🌤️ Tarde · Imperdibles juntos",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Nara+Park+Japan\" target=\"_blank\" rel=\"noopener\"><b>Nara Park</b></a> <span class=\"star\">★</span>: ciervos, jardines y vibe muy relajada.",
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Todai-ji+Temple+Nara\" target=\"_blank\" rel=\"noopener\"><b>Todai‑ji</b></a> <span class=\"star\">★</span>: Gran Buda y un templo enorme e impresionante.",
+            "<span class=\"time\">⏱️ 3–4 h</span> total."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Regreso a Kyoto",
+          "list": [
+            "Regreso temprano para descansar.",
+            "Si traes antojo: postre en konbini (sí, es parte del viaje)."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Osaka · Sakura + ciudad vibrante",
+      "tags": ["🌸 Castillo", "🌆 Dotonbori"],
+      "meta": "Castillo por la tarde · noche de comida callejera y luces.",
+      "content": [
+        {
+          "title": "🚆 Mañana · Kyoto → Osaka",
+          "list": [
+            "Kyoto → Osaka.",
+            "<span class=\"time\">⏱️ ~30 min</span>."
+          ]
+        },
+        {
+          "title": "🌸 Tarde · Osaka Castle Park <span class=\"star\">★</span>",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Osaka+Castle+Park\" target=\"_blank\" rel=\"noopener\">Hanami + vistas del castillo</a> + parque amplio.",
+            "<span class=\"time\">⏱️ ~2 h</span>.",
+            "Extra opcional: museos o jardines exteriores del castillo."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Dotonbori + Namba <span class=\"star\">★</span>",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=Dotonbori+Osaka\" target=\"_blank\" rel=\"noopener\">Takoyaki · Okonomiyaki · ramen · luces icónicas</a>.",
+            "<span class=\"time\">⏱️ 2–3 h</span>. Perfecto para fotos nocturnas."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Tokyo · teamLab + regreso",
+      "tags": ["🎨 Borderless", "✈️ Vuelo"],
+      "meta": "Regreso a Tokyo por la mañana · teamLab por la tarde · aeropuerto por la noche.",
+      "content": [
+        {
+          "title": "🚄 Mañana · Shinkansen a Tokyo",
+          "list": [
+            "<b>Osaka/Kyoto → Tokyo</b>.",
+            "<span class=\"time\">⏱️ ~2.5 h</span>."
+          ]
+        },
+        {
+          "title": "🎨 Tarde · teamLab Borderless <span class=\"star\">★</span>",
+          "list": [
+            "<a class=\"place-link\" href=\"https://www.google.com/search?q=teamLab+Borderless+Tokyo\" target=\"_blank\" rel=\"noopener\">Arte digital inmersivo</a> (de lo más memorable del viaje).",
+            "<span class=\"time\">⏱️ 1.5–2 h</span>.",
+            "<b>Entrada con horario fijo</b>: compra anticipada.",
+            "Extra opcional: <a class=\"place-link\" href=\"https://www.google.com/search?q=Azabudai+Hills+Tokyo\" target=\"_blank\" rel=\"noopener\"><b>Azabudai Hills</b></a> (cafés, arquitectura moderna, miradores)."
+          ]
+        },
+        {
+          "title": "🌙 Noche · Aeropuerto + vuelo a Houston",
+          "list": [
+            "Sal con margen: equipaje + traslado + seguridad.",
+            "<span class=\"time\">Tip:</span> si vuelas de NRT, el traslado suele tomar más tiempo que HND."
+          ]
+        }
+      ]
+    }
+  ]
+}

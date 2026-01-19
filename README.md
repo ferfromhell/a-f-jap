@@ -1,84 +1,70 @@
-# Japan Express Itinerary (7 Days)
+# Getting Started with Create React App
 
-A beautiful, interactive itinerary planner for a 7-day trip to Japan featuring Tokyo, Kyoto, Nara, and Osaka during cherry blossom season.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Features
+## Available Scripts
 
-- 📱 **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- 🌸 **Cherry Blossom Season**: Optimized for sakura viewing in late March/early April
-- 🔗 **Interactive Links**: Click on place names to search on Google
-- 🗺️ **Google Maps Integration**: Quick links to all major destinations
-- ✅ **Checklist**: Copyable pre-trip checklist for easy planning
-- 🖨️ **Print-Friendly**: Clean print layout for offline reference
+In the project directory, you can run:
 
-## Quick Start
+### `npm start`
 
-Simply open `ite_jap.html` in your web browser. No build process or dependencies required!
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```bash
-# Clone the repository
-git clone https://github.com/ferfromhell/a-f-jap.git
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-# Navigate to the directory
-cd a-f-jap
+### `npm test`
 
-# Open in your default browser
-open ite_jap.html
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Deployment
+### `npm run build`
 
-### GitHub Pages
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. Push this repository to GitHub
-2. Go to Settings → Pages
-3. Select the branch (usually `main`) and root directory
-4. Your site will be available at `https://yourusername.github.io/repository-name/ite_jap.html`
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Netlify
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1. Drag and drop the folder to [Netlify Drop](https://app.netlify.com/drop)
-2. Or connect your GitHub repository for automatic deployments
+### `npm run eject`
 
-### Vercel
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```bash
-# Install Vercel CLI
-npm i -g vercel
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# Deploy
-vercel
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Itinerary Overview
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- **Day 1**: Tokyo - Arrival and adaptation
-- **Day 2**: Tokyo - Sakura viewing + urban neighborhoods (Asakusa/Shibuya) + vintage shopping
-- **Day 3**: Tokyo → Kyoto - Shinkansen journey
-- **Day 4**: Kyoto - Fushimi Inari + Philosopher's Path + Gion
-- **Day 5**: Nara - Day trip for deer park and Todai-ji Temple
-- **Day 6**: Osaka - Castle park + Dotonbori nightlife
-- **Day 7**: Tokyo - teamLab Borderless + departure
+## Learn More
 
-## Customization
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-The itinerary is built with vanilla HTML and CSS, making it easy to customize:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- **Colors**: Modify CSS variables in the `:root` section
-- **Content**: Edit the HTML directly to adjust destinations, times, or descriptions
-- **Links**: All place names are linked to Google search for easy exploration
+### Code Splitting
 
-## Technologies Used
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-- Pure HTML5
-- Vanilla CSS3 (no frameworks)
-- Vanilla JavaScript (no dependencies)
-- Responsive design with CSS Grid and Flexbox
+### Analyzing the Bundle Size
 
-## License
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-Feel free to use this template for your own travel planning!
+### Making a Progressive Web App
 
-## Credits
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Created for an amazing Japan adventure 🇯🇵✨
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
