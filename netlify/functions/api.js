@@ -1,10 +1,16 @@
 // netlify/functions/api.js
-const express = require('express');
-const serverless = require('serverless-http');
-const fetch = require('node-fetch');
+
+import express, { Router } from 'express';
+import serverless from "serverless-http";
+import fetch from "node-fetch";
 
 const api = express();
-const router = express.Router();
+const router = Router();
+
+// Test route
+router.get('/test', (req, res) => {
+  res.json({ message: 'Test route working!' });
+});
 
 // Define flight route
 router.get('/flights', async (req, res) => {
@@ -67,4 +73,5 @@ router.get('/flights', async (req, res) => {
 api.use('/api/', router);
 
 // Export handler
-exports.handler = serverless(api);
+export const handler = serverless(api);
+
