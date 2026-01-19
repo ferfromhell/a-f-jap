@@ -6,6 +6,8 @@
   directory = "netlify/functions"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  from = "/api/flights"
+  to = "/.netlify/functions/flights"
   status = 200
+  force = true
+
