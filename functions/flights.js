@@ -1,5 +1,5 @@
-// netlify/functions/flights.js
-const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+// functions/flights.js
+const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
   const SERPAPI_KEY = process.env.SERPAPI_KEY;
