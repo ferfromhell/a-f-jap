@@ -40,6 +40,19 @@ function Flights({ flightsData }) {
     }
   };
 
+  const handleTestHelloWorld = async () => {
+    try {
+      const response = await fetch('/.netlify/functions/hello-world');
+      if (!response.ok) {
+        throw new Error(`Status: ${response.status}`);
+      }
+      const text = await response.text();
+      alert(`Hello World Success: ${text}`);
+    } catch (error) {
+      alert(`Hello World Failed: ${error.message}`);
+    }
+  };
+
   if (!flights) return null;
 
   return (
