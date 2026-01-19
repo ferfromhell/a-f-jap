@@ -5,68 +5,23 @@ function Flights({ flightsData }) {
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const handleRefresh = async () => {
-    // Note: Environment variables used in React must start with REACT_APP_
-    const SERPAPI_KEY = process.env.REACT_APP_SERPAPI_KEY;
-
-    if (!SERPAPI_KEY || SERPAPI_KEY === "YOUR_SERPAPI_KEY_HERE") {
-      alert("Please set REACT_APP_SERPAPI_KEY in your .env file or GitHub Secrets!");
-      return;
-    }
-
     setIsRefreshing(true);
 
     try {
-      const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=IAH&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
+      // Now calling our own backend instead of direct API
+      const response = await fetch('/api/flights');
 
-      // Switching to corsproxy.io which is often more stable than allorigins
-      const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
-
-      const response = await fetch(proxyUrl);
-      if (!response.ok) throw new Error(`Proxy error: ${response.status}`);
-
-      const data = await response.json();
-      const rawFlights = data.best_flights || data.other_flights || [];
-
-      if (rawFlights.length === 0) {
-        alert("No flights found for these dates.");
-        setIsRefreshing(false);
-        return;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch flight data');
       }
 
-      // Map SerpApi results to our component's format
-      const newFlights = rawFlights.slice(0, 3).map(f => {
-        const firstLeg = f.flights[0];
-        const lastLeg = f.flights[f.flights.length - 1];
-
-        return {
-          airline: firstLeg.airline,
-          price: `$${f.price.toLocaleString()}`,
-          route: {
-            from: {
-              code: firstLeg.departure_airport.id,
-              time: firstLeg.departure_airport.time.split(' ')[1] + ' ' + firstLeg.departure_airport.time.split(' ')[2]
-            },
-            to: {
-              code: lastLeg.arrival_airport.id,
-              time: lastLeg.arrival_airport.time.split(' ')[1] + ' ' + lastLeg.arrival_airport.time.split(' ')[2]
-            }
-          },
-          details: [
-            {
-              type: 'badge',
-              class: f.flights.length === 1 ? 'nonstop' : 'transit',
-              text: f.flights.length === 1 ? 'Nonstop' : `${f.flights.length - 1} stops`
-            },
-            { text: `${Math.floor(f.total_duration / 60)}h ${f.total_duration % 60}m` }
-          ]
-        };
-      });
-
+      const newFlights = await response.json();
       setFlights(newFlights);
-      alert('Prices Updated with Real Data ⚡️');
+      alert('Prices Updated via Backend ⚡️');
     } catch (error) {
       console.error("Error fetching flights:", error);
-      alert("Failed to fetch flight data. Check console and CORS settings.");
+      alert(`Failed: ${error.message}`);
     } finally {
       setIsRefreshing(false);
     }
