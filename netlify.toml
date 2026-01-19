@@ -3,15 +3,10 @@
   publish = "build"
 
 
-[[redirects]]
-  from = "/api/flights"
-  to = "/.netlify/functions/flights"
-  status = 200
-  force = true
+[build.environment]
+  NODE_VERSION = "20"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[functions]
+  directory = "netlify/functions"
 
 
