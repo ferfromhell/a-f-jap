@@ -5,12 +5,11 @@ function Flights({ flightsData }) {
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   const handleRefresh = async () => {
-    // ⚠️ IMPORTANT: In a real production app, you should call your own backend 
-    // to hide your API Key. Calling SerpApi directly from frontend exposes your key.
-    const SERPAPI_KEY = "YOUR_SERPAPI_KEY_HERE";
+    // Note: Environment variables used in React must start with REACT_APP_
+    const SERPAPI_KEY = process.env.REACT_APP_SERPAPI_KEY;
 
-    if (SERPAPI_KEY === "YOUR_SERPAPI_KEY_HERE") {
-      alert("Please set your SerpApi Key in Flights.js to use real data!");
+    if (!SERPAPI_KEY || SERPAPI_KEY === "YOUR_SERPAPI_KEY_HERE") {
+      alert("Please set REACT_APP_SERPAPI_KEY in your .env file or GitHub Secrets!");
       return;
     }
 
