@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const APP_VERSION = '1.0.6';
+const APP_VERSION = '1.0.7';
 
 function Flights({ flightsData }) {
   const [flights, setFlights] = useState(flightsData);
