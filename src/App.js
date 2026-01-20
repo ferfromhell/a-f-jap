@@ -9,6 +9,8 @@ import Tips from './components/Tips';
 // Import data directly since it's JSON
 import data from './data/data.json';
 
+const APP_VERSION = '1.0.1';
+
 function App() {
   const [expandAction, setExpandAction] = useState(null); // 'expand' | 'collapse' | null
 
@@ -89,6 +91,8 @@ function App() {
         <br />
         <span className="muted">Fuentes sugeridas para validar rutas: sitios oficiales de aerolíneas y metabuscadores.</span>
       </div>
+
+      <div className="version-badge">v{APP_VERSION}</div>
     </div>
   );
 }
