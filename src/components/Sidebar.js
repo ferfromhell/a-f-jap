@@ -1,6 +1,17 @@
 import React from 'react';
+import ThemeToggle from './ThemeToggle';
 
-function Sidebar({ isOpen, isCollapsed, onToggle, onClose, currentDestination, onNavigate, destinations }) {
+function Sidebar({ 
+  isOpen, 
+  isCollapsed, 
+  onToggle, 
+  onClose, 
+  currentDestination, 
+  onNavigate, 
+  destinations,
+  theme,
+  onThemeToggle 
+}) {
   return (
     <>
       {/* Mobile overlay */}
@@ -11,7 +22,12 @@ function Sidebar({ isOpen, isCollapsed, onToggle, onClose, currentDestination, o
       <aside className={`sidebar ${isOpen ? 'open' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
         <div className="sidebar-header">
           {!isCollapsed && <span className="sidebar-logo">🌍 Adventures</span>}
-          <button className="sidebar-toggle" onClick={onToggle} title={isCollapsed ? 'Expand menu' : 'Collapse menu'}>
+          <button 
+            className="sidebar-toggle" 
+            onClick={onToggle} 
+            title={isCollapsed ? 'Expand menu' : 'Collapse menu'}
+            aria-label={isCollapsed ? 'Expand menu' : 'Collapse menu'}
+          >
             {isCollapsed ? '→' : '←'}
           </button>
         </div>
@@ -49,8 +65,13 @@ function Sidebar({ isOpen, isCollapsed, onToggle, onClose, currentDestination, o
         </nav>
         
         <div className="sidebar-footer">
+          <ThemeToggle 
+            theme={theme} 
+            onToggle={onThemeToggle} 
+            collapsed={isCollapsed} 
+          />
           {!isCollapsed && (
-            <div className="sidebar-credit">
+            <div className="sidebar-credit" style={{ marginTop: '12px' }}>
               Ana & Fer Adventures
             </div>
           )}

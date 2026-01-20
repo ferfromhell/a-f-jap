@@ -4,14 +4,31 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Japan, { japanConfig } from './destinations/Japan';
 
-const APP_VERSION = '2.0.0';
+const APP_VERSION = '2.1.0';
 
 // All available destinations
 const destinations = [
   japanConfig,
   // Add more destinations here as they're created
-  // { id: 'italy', name: 'Italy', icon: '🇮🇹', ... }
 ];
+
+// Theme utilities
+const THEME_KEY = 'adventure-blog-theme';
+
+function getInitialTheme() {
+  // Check localStorage first
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    return savedTheme;
+  }
+  
+  // Fall back to system preference
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+    return 'light';
+  }
+  
+  return 'dark';
+}
 
 function App() {
   const [expandAction, setExpandAction] = useState(null);
@@ -19,6 +36,28 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  // Apply theme to document
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }, [theme]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    
+    const handleChange = (e) => {
+      // Only update if user hasn't set a preference
+      if (!localStorage.getItem(THEME_KEY)) {
+        setTheme(e.matches ? 'light' : 'dark');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   // Handle window resize
   useEffect(() => {
@@ -31,7 +70,7 @@ function App() {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
+    handleResize();
     
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -67,6 +106,10 @@ function App() {
     }
   };
 
+  const handleThemeToggle = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
   // Get current destination config
   const destConfig = destinations.find(d => d.id === currentDestination) || destinations[0];
 
@@ -90,6 +133,8 @@ function App() {
         currentDestination={currentDestination}
         onNavigate={handleNavigate}
         destinations={destinations}
+        theme={theme}
+        onThemeToggle={handleThemeToggle}
       />
       
       <main className="main-content">
