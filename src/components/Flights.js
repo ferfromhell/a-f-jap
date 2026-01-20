@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-const APP_VERSION = '1.0.7';
-
 function Flights({ flightsData }) {
   const [flights, setFlights] = useState(flightsData);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -10,7 +8,6 @@ function Flights({ flightsData }) {
     setIsRefreshing(true);
 
     try {
-      // Now calling our own backend instead of direct API
       const response = await fetch('/api/flights');
 
       if (!response.ok) {
@@ -20,38 +17,10 @@ function Flights({ flightsData }) {
 
       const newFlights = await response.json();
       setFlights(newFlights);
-      console.log(`[v${APP_VERSION}] ✅ Prices Updated via Backend ⚡️`);
     } catch (error) {
-      console.error(`[v${APP_VERSION}] Error fetching flights:`, error);
-      console.log(`[v${APP_VERSION}] ❌ Refresh Failed: ${error.message}`);
+      console.error('Error fetching flights:', error);
     } finally {
       setIsRefreshing(false);
-    }
-  };
-
-  const handleTestApi = async () => {
-    try {
-      const response = await fetch('/api/test');
-      if (!response.ok) {
-        throw new Error(`Status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log(`[v${APP_VERSION}] ✅ API Test Success:`, data);
-    } catch (error) {
-      console.log(`[v${APP_VERSION}] ❌ API Test Failed: ${error.message}`);
-    }
-  };
-
-  const handleTestHelloWorld = async () => {
-    try {
-      const response = await fetch('/.netlify/functions/hello-world');
-      if (!response.ok) {
-        throw new Error(`Status: ${response.status}`);
-      }
-      const text = await response.text();
-      console.log(`[v${APP_VERSION}] ✅ Hello World Success: ${text}`);
-    } catch (error) {
-      console.log(`[v${APP_VERSION}] ❌ Hello World Failed: ${error.message}`);
     }
   };
 
@@ -71,20 +40,6 @@ function Flights({ flightsData }) {
           disabled={isRefreshing}
         >
           {isRefreshing ? '🔄 Checking...' : '🔄 Refresh Prices'}
-        </button>
-        <button
-          className="btn secondary"
-          style={{ fontSize: '12px', padding: '8px 12px', marginLeft: '10px', background: '#444', color: '#fff' }}
-          onClick={handleTestApi}
-        >
-          🧪 Test Connection
-        </button>
-        <button
-          className="btn secondary"
-          style={{ fontSize: '12px', padding: '8px 12px', marginLeft: '10px', background: '#222', color: '#fff' }}
-          onClick={handleTestHelloWorld}
-        >
-          👋 Hello World
         </button>
       </div>
 
