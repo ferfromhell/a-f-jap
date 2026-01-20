@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const APP_VERSION = '1.0.5';
+
 function Flights({ flightsData }) {
   const [flights, setFlights] = useState(flightsData);
   const [isRefreshing, setIsRefreshing] = useState(false);
@@ -18,10 +20,10 @@ function Flights({ flightsData }) {
 
       const newFlights = await response.json();
       setFlights(newFlights);
-      console.log('✅ Prices Updated via Backend ⚡️');
+      console.log(`[v${APP_VERSION}] ✅ Prices Updated via Backend ⚡️`);
     } catch (error) {
-      console.error("Error fetching flights:", error);
-      console.log(`❌ Refresh Failed: ${error.message}`);
+      console.error(`[v${APP_VERSION}] Error fetching flights:`, error);
+      console.log(`[v${APP_VERSION}] ❌ Refresh Failed: ${error.message}`);
     } finally {
       setIsRefreshing(false);
     }
@@ -34,9 +36,9 @@ function Flights({ flightsData }) {
         throw new Error(`Status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(`✅ API Test Success:`, data);
+      console.log(`[v${APP_VERSION}] ✅ API Test Success:`, data);
     } catch (error) {
-      console.log(`❌ API Test Failed: ${error.message}`);
+      console.log(`[v${APP_VERSION}] ❌ API Test Failed: ${error.message}`);
     }
   };
 
@@ -47,9 +49,9 @@ function Flights({ flightsData }) {
         throw new Error(`Status: ${response.status}`);
       }
       const text = await response.text();
-      console.log(`✅ Hello World Success: ${text}`);
+      console.log(`[v${APP_VERSION}] ✅ Hello World Success: ${text}`);
     } catch (error) {
-      console.log(`❌ Hello World Failed: ${error.message}`);
+      console.log(`[v${APP_VERSION}] ❌ Hello World Failed: ${error.message}`);
     }
   };
 
