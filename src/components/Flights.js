@@ -18,10 +18,10 @@ function Flights({ flightsData }) {
 
       const newFlights = await response.json();
       setFlights(newFlights);
-      alert('Prices Updated via Backend ⚡️');
+      console.log('✅ Prices Updated via Backend ⚡️');
     } catch (error) {
       console.error("Error fetching flights:", error);
-      alert(`Failed: ${error.message}`);
+      console.log(`❌ Refresh Failed: ${error.message}`);
     } finally {
       setIsRefreshing(false);
     }
@@ -34,9 +34,9 @@ function Flights({ flightsData }) {
         throw new Error(`Status: ${response.status}`);
       }
       const data = await response.json();
-      alert(`API Test Success: ${JSON.stringify(data)}`);
+      console.log(`✅ API Test Success:`, data);
     } catch (error) {
-      alert(`API Test Failed: ${error.message}`);
+      console.log(`❌ API Test Failed: ${error.message}`);
     }
   };
 
@@ -47,9 +47,9 @@ function Flights({ flightsData }) {
         throw new Error(`Status: ${response.status}`);
       }
       const text = await response.text();
-      alert(`Hello World Success: ${text}`);
+      console.log(`✅ Hello World Success: ${text}`);
     } catch (error) {
-      alert(`Hello World Failed: ${error.message}`);
+      console.log(`❌ Hello World Failed: ${error.message}`);
     }
   };
 
