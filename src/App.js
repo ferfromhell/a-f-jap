@@ -9,7 +9,7 @@ import Tips from './components/Tips';
 // Import data directly since it's JSON
 import data from './data/data.json';
 
-const APP_VERSION = '1.0.5';
+const APP_VERSION = '1.0.6';
 
 function App() {
   const [expandAction, setExpandAction] = useState(null); // 'expand' | 'collapse' | null
