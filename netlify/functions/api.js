@@ -1,7 +1,6 @@
 // netlify/functions/api.js
 const express = require('express');
 const serverless = require('serverless-http');
-// node-fetch v2 is CJS compatible
 const fetch = require('node-fetch');
 
 const api = express();
@@ -12,16 +11,25 @@ router.get('/test', (req, res) => {
   res.json({ message: 'Test route working!', timestamp: new Date().toISOString() });
 });
 
-// Define flight route
+// Define flight route with dynamic departure airport
 router.get('/flights', async (req, res) => {
   const SERPAPI_KEY = process.env.SERPAPI_KEY;
+  
+  // Get departure airport from query param, default to IAH
+  const departureId = req.query.departure || 'IAH';
+  
+  // Validate airport code
+  const validAirports = ['IAH', 'MEX'];
+  if (!validAirports.includes(departureId.toUpperCase())) {
+    return res.status(400).json({ error: `Invalid departure airport. Must be one of: ${validAirports.join(', ')}` });
+  }
 
   if (!SERPAPI_KEY) {
     return res.status(500).json({ error: "SERPAPI_KEY not configured on Netlify." });
   }
 
   try {
-    const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=IAH&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
+    const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=${departureId.toUpperCase()}&arrival_id=NRT&outbound_date=2026-03-28&return_date=2026-04-04&currency=USD&hl=en&api_key=${SERPAPI_KEY}`;
 
     const response = await fetch(targetUrl);
 
@@ -30,10 +38,14 @@ router.get('/flights', async (req, res) => {
     }
 
     const data = await response.json();
-    const rawFlights = data.best_flights || data.other_flights || [];
+    
+    // Combine best_flights and other_flights for more results
+    const bestFlights = data.best_flights || [];
+    const otherFlights = data.other_flights || [];
+    const allFlights = [...bestFlights, ...otherFlights];
 
-    // Map results
-    const formattedFlights = rawFlights.slice(0, 3).map(f => {
+    // Map all results (no limit)
+    const formattedFlights = allFlights.map(f => {
       const firstLeg = f.flights[0];
       const lastLeg = f.flights[f.flights.length - 1];
 
@@ -54,7 +66,7 @@ router.get('/flights', async (req, res) => {
           {
             type: 'badge',
             class: f.flights.length === 1 ? 'nonstop' : 'transit',
-            text: f.flights.length === 1 ? 'Nonstop' : `${f.flights.length - 1} stops`
+            text: f.flights.length === 1 ? 'Nonstop' : `${f.flights.length - 1} stop${f.flights.length > 2 ? 's' : ''}`
           },
           { text: `${Math.floor(f.total_duration / 60)}h ${f.total_duration % 60}m` }
         ]
@@ -73,4 +85,3 @@ api.use('/api/', router);
 
 // Export handler
 module.exports.handler = serverless(api);
-

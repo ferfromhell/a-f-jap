@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Japan, { japanConfig } from './destinations/Japan';
 
-const APP_VERSION = '2.1.0';
+const APP_VERSION = '2.2.0';
 
 // All available destinations
 const destinations = [

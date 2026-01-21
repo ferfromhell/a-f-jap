@@ -831,10 +831,118 @@ summary::-webkit-details-marker {
   border: 1px solid var(--primary);
 }
 
-.flight-badge.stop {
+.flight-badge.stop,
+.flight-badge.transit {
   background: var(--accent-gold-muted);
   color: var(--accent-gold);
   border: 1px solid var(--accent-gold);
+}
+
+/* ========== Airport Toggle ========== */
+
+.airport-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.airport-toggle-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.airport-toggle {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px;
+  gap: 4px;
+}
+
+.airport-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.airport-option:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.airport-option.active {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.airport-flag {
+  font-size: 16px;
+}
+
+.airport-code {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ========== Flights Scroll Container ========== */
+
+.flights-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 4px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.flights-scroll-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 8px;
+  margin-right: -8px;
+}
+
+/* Custom scrollbar */
+.flights-scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flights-scroll-container::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 3px;
+}
+
+.flights-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+.flights-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.flights-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
 }
 
 /* ========== Version Badge ========== */
